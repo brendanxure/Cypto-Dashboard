@@ -1,13 +1,499 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+*{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  width: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+:root {
+  --blackcolor: #000000;
+  --whitecolor: #f5eaea;
+  --background: #c5c0c0f1;
+  --activeaside: #ae63b1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  background-color: var(--whitecolor);
+}
+.navleft {
+  display: flex;
+  width: 70%;
+  gap: 1.5rem;
+  
+}
+
+.navleft span {
+  width: 8rem;
+}
+
+.navleft div {
+  display: flex;
+  width: 60%;
+  position: relative;
+}
+
+.navleft div a {
+  width: 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+}
+
+.navleft div input {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  padding-left: 2rem ;
+  padding-right: 1rem;
+  background-color: var(--background);
+  /* border-radius: 20px; */
+}
+.navright {
+  display: flex;
+  width: 35%;
+  align-items: center;
+  justify-content: end;
+}
+
+.toggle {
+  display: flex;
+  width: 5rem;
+  background-color: azure;
+  height: 2rem;
+  font-size: x-large;
+  border-radius: 0.5rem;
+
+}
+
+.toggle a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.active {
+  background-color: var(--blackcolor);
+  color: var(--whitecolor);
+  border-radius: 0.5rem;
+  width: 110%;
+}
+
+.profile {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: end;
+}
+
+.profile span img {
+  border-radius: 50%;
+  max-width: 3rem;
+  min-width: 3rem; 
+}
+.profile span {
+  max-width: 4rem;
+}
+
+.profile a{
+  max-width: 1rem;
+}
+.profile p{
+  max-width: 4.5rem;
+}
+
+.hamburger {
+  display: none;
+  position: relative;
+}
+.App {
+  background: var(--background);
+}
+
+main {
+  display: flex;
+  position: relative;
+  transition: all 400ms ease;
+}
+aside {
+  width: 12%;
+  margin-top: 1.5rem;
+  position: relative;
+  left: 0%;
+  transition: all 1000ms linear;
+}
+
+.App:hover aside {
+  left: 0;
+  
+}
+
+aside div{
+  padding: 1.5rem 2rem;
+  margin-left: 2rem;
+  transition: all 400ms ease;
+}
+
+aside div:hover{
+  margin-left: 3rem;
+  background-color: aqua;
+  border-left: 6px solid var(--blackcolor);
+}
+
+aside div:hover a{
+  color: var(--activeaside);
+}
+
+.activeaside {
+ border-left: 6px solid var(--blackcolor);
+ background-color: var(--whitecolor);
+ color: var(--activeaside);
+ min-width: fit-content;
+ box-shadow: 0rem 0rem 0.5rem var(--blackcolor);
+ margin-bottom: 0.2rem;
+}
+aside div a{
+  display: flex;
+  justify-content: start;
+  gap: 0.5rem;
+  font-size: large;
+  cursor: pointer;
+  /* background-color: aqua; */
+}
+
+aside div a span {
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  min-width: max-content;
+}
+aside div a h4 {
+ display: flex;
+ justify-content: center;
+ width: fit-content;
+}
+
+@media screen and (max-width: 1400px) {
+  aside {
+    width: 10%;
+  }
+  .maindiv {
+    width: 50% !important;
+  }
+  .rightside {
+    width: 35% !important;
+  }
+  aside div a h4 {
+    display: none;
+  }
+  .activeaside, aside div {
+    width: fit-content;
+  }
+}
+
+.maindiv{
+  margin-left: 2.5rem;
+  width: 60%;
+  padding: 1rem;
+}
+
+.maindivheader{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.maindivheader h1{
+  max-width: fit-content;
+  min-width: max-content;
+}
+.maindivheader input{
+  width: 8rem;
+  height: 2rem;
+  padding-left:0.5rem;
+  border-radius: 0.5rem;
+}
+
+.atmcards {
+  display: flex;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+.eachcard {
+  background: var(--activeaside);
+  padding: 1rem;
+  border-radius: 1.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.eachcard:nth-child(2){
+  background: #922e2e;
+}
+
+.eachcard:nth-child(1) {
+  background: #e26804;
+}
+.eachcard top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cardtopleft{
+  display: flex;
+  gap: 5px;
+}
+.cardtopright {
+  display: flex;
+  justify-content: end;
+}
+.img {
+  height: 1.5rem;
+  width: 3rem;
+}
+.imglogo{
+  border: 1px solid var(--whitecolor);
+  padding-top: 4px;
+  padding-bottom: 4px;
+  height: 2rem;
+  border-radius: 7px;
+}
+.imgchipdiv{
+  display: flex;
+  justify-content: end;
+}
+.imgchip {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: end;
+}
+.eachcard middle{
+  display: flex;
+}
+
+.eachcard bottom{
+  display: flex;
+}
+
+.cardbottomright{
+  display: flex;
+}
+.cardbottomright div{
+  display: grid;
+  justify-content: end;
+}
+
+.reportdiv{
+  display: flex;
+  margin-top: 2rem;
+  color: var(--blackcolor);
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.eachreport {
+  width: 15rem;
+}
+.eachreport:nth-child(1) details p {
+    color: rgb(8, 143, 8);
+}
+
+.eachreport:nth-child(3) details p {
+  color: rgb(8, 143, 8);
+}
+.eachreport:nth-child(2) details p {
+  color: red;
+}
+
+.eachreport:nth-child(4) details p {
+  color: red;
+}
+.eachreport h5 {
+  color: grey;
+}
+
+.paymentdiv {
+  display: flex;
+  margin-top: 2rem;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.paymentdiv div{
+  width: max-content;
+}
+
+.paymentlist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.paymentlist div{
+  background-color: var(--whitecolor);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.chart{
+  background: var(--whitecolor);
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 96%;
+}
+
+@media screen and (max-width: 1400px) {
+  .atmcards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .paymentdiv {
+    display: flex;
+    flex-direction: column;
+  }
+  .paymentlist {
+    display: flex;
+    width: 90% !important;
+    justify-content: left !important;
+  }
+}
+
+.rightside {
+  width: 25%
+}
+
+.investment{
+  background: var(--whitecolor);
+  padding: 1.4rem 0rem 1.4rem 0rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+}
+
+.investmenttop {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 1.4rem 0rem;
+}
+
+.investmenttop a{
+  display: flex;
+  width: fit-content;
+  gap: 0.5rem;
+}
+.investmentmain{
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+}
+
+.eachinvdiv {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.0rem;
+  color: var(--blackcolor);
+  cursor: pointer;
+  align-items: center;
+  padding: 1.5rem 1.4rem 1.5rem 1.4rem;
+}
+
+.eachinvdiv:hover {
+  background-color: var(--background);
+}
+
+.eachinvdiv span {
+  width: max-content;
+}
+.eachinvdiv span img {
+  width: 2.7rem;
+  height: 2.7rem;
+}
+.eachinvdivnum{
+  width: max-content;
+}
+.eachinvdivpercent {
+  width: 85%;
+}
+.eachinvdivpercent p{
+    color: red;
+}
+
+.eachinvdiv:nth-child(2) .eachinvdivpercent p{
+  color: green;
+}
+
+.eachinvdiv:nth-child(3) .eachinvdivpercent p{
+  color: green;
+}
+
+.transactions{
+  /* padding: 1.4rem; */
+  padding: 1.4rem 0rem 1.4rem 0rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+}
+
+.transactionsmain{
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+}
+
+.eachtransacdivcol1{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.eachtransacdivcol1 span {
+  font-size: 1.8rem;
+}
+.eachtransacvisanumdiv{
+  display: flex;
+  gap: 2rem;
+}
+
+.eachtransacvisanumdiv span{
+  width: 7rem;
+  padding: 0rem 1rem;
+  display: flex;
+  justify-content: center;
+  background-color: #922e2e;
+  border-radius: 0.8rem;
+}
+
+.eachinvdiv:nth-child(3) .eachtransacvisanumdiv span, .eachinvdiv:nth-child(6) .eachtransacvisanumdiv span {
+  background-color: var(--blackcolor);
+}
+
+.eachinvdiv:nth-child(2) .eachtransacvisanumdiv span, .eachinvdiv:nth-child(5) .eachtransacvisanumdiv span {
+  background-color: var(--activeaside);
+}
+
+.eachtransacamount{
+  display: flex;
+  justify-content: end;
 }
