@@ -25,6 +25,11 @@ img {
   --activeaside: #ae63b1;
 }
 
+.darkphase {
+  --blackcolor: #f5eaea;
+  --whitecolor: #000000;
+  --background: #000000;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -139,11 +144,7 @@ aside {
   position: relative;
   left: 0%;
   transition: all 1000ms linear;
-}
-
-.App:hover aside {
-  left: 0;
-  
+  display: block;
 }
 
 aside div{
@@ -190,16 +191,29 @@ aside div a h4 {
  justify-content: center;
  width: fit-content;
 }
+.close {
+  display: none;
+  font-size: 2rem;
+  font-weight: 700;
+  width: 95%;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes asideanime {
+  to {
+    left : 0;
+  }
+}
 
 @media screen and (max-width: 1400px) {
   aside {
-    width: 10%;
+    width: 7%;
   }
   .maindiv {
-    width: 50% !important;
+    width: 45% !important;
   }
   .rightside {
-    width: 35% !important;
+    width: 38% !important;
   }
   aside div a h4 {
     display: none;
@@ -207,8 +221,75 @@ aside div a h4 {
   .activeaside, aside div {
     width: fit-content;
   }
+  main {
+    gap: 2rem;
+  }
 }
 
+@media screen and (max-width: 1200px) {
+  aside {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: -40%;
+    background-color: var(--background);
+    width: 16rem;
+    padding: 1rem 0rem 1rem 0rem;
+    animation: asideanime 500ms ease forwards;
+  }
+  .close {
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+  }
+  .maindiv {
+    width: 50% !important;
+  }
+  .rightside {
+    width: 40% !important;
+  }
+  main {
+    gap: 2rem;
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  aside div a h4 {
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+ main {
+   flex-direction: column !important;
+   justify-content: center !important;
+ } 
+ .maindiv {
+   width: 80% !important;
+   margin: 0 auto !important;
+ }
+ .rightside {
+  width: 80% !important;
+  margin: 0 auto !important;
+ }
+ .eachcard {
+   max-width: 40rem;
+ }
+ .eachreport {
+  width: 50% !important;
+}
+
+}
+
+@media screen and (max-width: 600px) {
+  .maindiv{
+    width: 94% !important;
+  }
+  .eachreport {
+    width: 50% !important;
+  }
+}
 .maindiv{
   margin-left: 2.5rem;
   width: 60%;
@@ -383,7 +464,8 @@ aside div a h4 {
 }
 
 .rightside {
-  width: 25%
+  width: 25%;
+  margin: 0 auto;
 }
 
 .investment{
@@ -496,4 +578,13 @@ aside div a h4 {
 .eachtransacamount{
   display: flex;
   justify-content: end;
+}
+
+@media screen and (max-width: 600px) {
+ .eachinvdivnum {
+   display: none;
+ }
+ .eachtransacvisanumdiv {
+   display: none;
+ }
 }

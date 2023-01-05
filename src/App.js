@@ -255,6 +255,21 @@ function App() {
       amount: "-$45",
     },
   ])
+
+  const hamburger = document.querySelector('.hamburger');
+  const aside = document.querySelector('aside')
+  const close = document.querySelector('.close')
+  const toggle = document.querySelector('.toggle');
+
+  // hamburger.addEventListener('click', ()=> {
+  //   aside.style.display= 'block'
+  // })
+  // close.addEventListener('click', () => {
+  //   aside.style.display = 'none'
+  // })
+  // toggle.addEventListener('click', ()=> {
+  //   document.body.classList.toggle('darkphase');
+  // })
   return (
     <div className="App">
       <nav className='navbar'>
@@ -281,6 +296,7 @@ function App() {
       {/* ---------END OF NAV---------- */}
       <main>
         <aside>
+          <small className='close'>X</small>
           <div className='activeaside'>
             <a>
               <span><MdDashboard /></span>
