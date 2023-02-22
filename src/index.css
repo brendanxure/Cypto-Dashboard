@@ -507,14 +507,14 @@ aside div a h4 {
 }
 
 .eachinvdiv span {
-  width: max-content;
+  width: min-content;
 }
 .eachinvdiv span img {
-  width: 2.7rem;
-  height: 2.7rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 .eachinvdivnum{
-  width: max-content;
+  width: min-content;
 }
 .eachinvdivpercent {
   width: 85%;
@@ -560,7 +560,7 @@ aside div a h4 {
 
 .eachtransacvisanumdiv span{
   width: 7rem;
-  padding: 0rem 1rem;
+  padding: 0rem 0rem;
   display: flex;
   justify-content: center;
   background-color: #922e2e;
@@ -577,7 +577,7 @@ aside div a h4 {
 
 .eachtransacamount{
   display: flex;
-  justify-content: end;
+  justify-content: start;
 }
 
 @media screen and (max-width: 600px) {
